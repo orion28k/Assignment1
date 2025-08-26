@@ -1,4 +1,4 @@
-#In-class Assignment
+# In-class Assignment
 
 Create a C# solution with two projects, a class library and a test project. The class library should contain
 a method that checks the strength of a password. There are four criteria: having atleast one captial letter,
