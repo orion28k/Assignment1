@@ -1,10 +1,13 @@
+using ClassLibrary1;
 namespace TestProject1;
 
 public class UnitTest1
 {
     [Fact]
-    public void Test1()
+    public void main()
     {
-
+        string password = "Password123!";
+        string result = Class1.passCheck(password);
+        Console.WriteLine(result);
     }
 }
