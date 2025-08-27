@@ -15,6 +15,8 @@ public class Class1
             grade++;
         if (password.Any(char.IsSymbol))
             grade++;
+        if (password.Length > 8)
+            return "Password must be at least 8 characters long";
 
         switch (grade)
         {

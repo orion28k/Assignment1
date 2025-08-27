@@ -6,8 +6,8 @@ public class UnitTest1
     [Fact]
     public void main()
     {
-        string password = "Password123!";
+        string password = "Password";
         string result = Class1.passCheck(password);
-        Console.WriteLine(result);
+        Assert.Equal("MEDIUM", result);
     }
 }
