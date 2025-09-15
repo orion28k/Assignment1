@@ -51,6 +51,8 @@ public class Class1
     /// <summary>
     /// Generates a valid 4 UUID string (xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx).
     /// </summary>
-    /// <returns>UUID string.</returns>
+    /// <returns>
+    /// UUID string.
+    /// </returns>
     public static string CreateV4UuidString() => Guid.NewGuid().ToString("D");
 }
