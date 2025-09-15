@@ -3,6 +3,17 @@
 namespace ClassLibrary1;
 public class Class1
 {
+    /// <summary>
+    /// Checks whether a password is valid by ensuring it meets a minimum length
+    /// and contains at least one digit, one uppercase letter, and one symbol.
+    /// </summary>
+    /// <param name="password">
+    /// The password string to validate.
+    /// </param>
+    /// <returns>
+    /// True if the password meets the criteria (length, digit, uppercase);
+    /// otherwise, false.
+    /// </returns>
     public static string passCheck(string password)
     {
         int grade = 0;
