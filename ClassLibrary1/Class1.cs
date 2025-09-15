@@ -28,7 +28,7 @@ public class Class1
             grade++;
         if (password.Any(char.IsSymbol))
             grade++;
-        if (password.Length > 8)
+        if (password.Length < 8)
             return "Password must be at least 8 characters long";
 
         switch (grade)
@@ -51,6 +51,8 @@ public class Class1
     /// <summary>
     /// Generates a valid 4 UUID string (xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx).
     /// </summary>
-    /// <returns>UUID string.</returns>
+    /// <returns>
+    /// UUID string.
+    /// </returns>
     public static string CreateV4UuidString() => Guid.NewGuid().ToString("D");
 }
