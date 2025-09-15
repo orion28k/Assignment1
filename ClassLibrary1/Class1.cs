@@ -1,6 +1,8 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Data.Common;
+using System.Runtime.CompilerServices;
 
 namespace ClassLibrary1;
+
 public class Class1
 {
     /// <summary>
@@ -45,4 +47,10 @@ public class Class1
                 return "None";
         }
     }
+
+    /// <summary>
+    /// Generates a valid 4 UUID string (xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx).
+    /// </summary>
+    /// <returns>UUID string.</returns>
+    public static string CreateV4UuidString() => Guid.NewGuid().ToString("D");
 }
