@@ -43,20 +43,17 @@ public class UnitTest1
     [Fact]
     public void ShouldGenerateValidV4UuidString()
     {
-        // Act
         string id = Class1.CreateV4UuidString();
 
-        // Manual checks for UUID v4 format
-        Assert.Equal(36, id.Length);          // UUID should be 36 chars (with hyphens)
-        Assert.Equal('-', id[8]);             // Hyphen positions
+        Assert.Equal(36, id.Length);
+        Assert.Equal('-', id[8]);
         Assert.Equal('-', id[13]);
         Assert.Equal('-', id[18]);
         Assert.Equal('-', id[23]);
 
-        Assert.Equal('4', id[14]);            // Version 4
-        Assert.Contains(id[19], new[] { '8', '9', 'a', 'A', 'b', 'B' }); // Variant bits
+        Assert.Equal('4', id[14]);
+        Assert.Contains(id[19], new[] { '8', '9', 'a', 'A', 'b', 'B' });
 
-        // Ensure it can be parsed into a Guid
         Guid parsed = Guid.Parse(id);
         Assert.NotEqual(Guid.Empty, parsed);
     }
