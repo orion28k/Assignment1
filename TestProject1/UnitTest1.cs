@@ -1,3 +1,4 @@
+using System.Data.Common;
 using ClassLibrary1;
 namespace TestProject1;
 
@@ -37,5 +38,37 @@ public class UnitTest1
     public void ShouldCountLengthGreaterThan8()
     {
         Assert.Equal("STRONG", Class1.passCheck("+aAAAAAA1"));
+    }
+
+    [Fact]
+    public void ShouldGenerateValidV4UuidString()
+    {
+        // Act
+        string id = Class1.CreateV4UuidString();
+
+        // Manual checks for UUID v4 format
+        Assert.Equal(36, id.Length);          // UUID should be 36 chars (with hyphens)
+        Assert.Equal('-', id[8]);             // Hyphen positions
+        Assert.Equal('-', id[13]);
+        Assert.Equal('-', id[18]);
+        Assert.Equal('-', id[23]);
+
+        Assert.Equal('4', id[14]);            // Version 4
+        Assert.Contains(id[19], new[] { '8', '9', 'a', 'A', 'b', 'B' }); // Variant bits
+
+        // Ensure it can be parsed into a Guid
+        Guid parsed = Guid.Parse(id);
+        Assert.NotEqual(Guid.Empty, parsed);
+    }
+
+    [Fact]
+    public void ShouldGenerateUniqueV4UuidString()
+    {
+        List<string> id = new List<string>();
+
+        foreach (int i in Enumerable.Range(0, 10))
+            id.Add(Class1.CreateV4UuidString());
+        
+        Assert.Equal(id.Count, id.Distinct().Count());
     }
 }
