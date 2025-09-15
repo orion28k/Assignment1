@@ -30,12 +30,12 @@ public class UnitTest1
     [Fact]
     public void ShouldReturnStrongForFourCases()
     {
-        Assert.Equal("STRONG", Class1.passCheck("@aA1"));
+        Assert.Equal("STRONG", Class1.passCheck("+aA1000000"));
     }
 
     [Fact]
     public void ShouldCountLengthGreaterThan8()
     {
-        Assert.Equal("STRONG", Class1.passCheck("@aAAAAAA"));
+        Assert.Equal("STRONG", Class1.passCheck("+aAAAAAA1"));
     }
 }
